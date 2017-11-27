@@ -1,0 +1,11 @@
+{
+  "customers" : [ {
+    "custID" : "1",
+    "name" : "n1",
+    "surname" : "sn1"
+  }, {
+    "custID" : "2",
+    "name" : "n2",
+    "surname" : "sn2"
+  } ]
+}

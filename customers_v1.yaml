@@ -1,0 +1,52 @@
+---
+swagger: "2.0"
+info:
+  version: "1.0"
+  title: "customers_v1"
+host: "localhost:5555"
+basePath: "/rest"
+schemes:
+- "http"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+paths:
+  /REST_v1_vs_v2/com/sag/customers/restsvc/customers_v1:
+    post:
+      operationId: "_post"
+      parameters:
+      - name: "$resourceID"
+        in: "header"
+        required: false
+        type: "string"
+      - name: "$path"
+        in: "header"
+        required: false
+        type: "string"
+      - in: "body"
+        name: "customers"
+        required: true
+        schema:
+          type: "array"
+          items:
+            $ref: "#/definitions/Customer"
+      responses:
+        200:
+          description: "Successful"
+        401:
+          description: "Access Denied"
+definitions:
+  REST_v1_vs_v2.com.sag.customers.doc:Customer:
+    required:
+    - "custID"
+    - "name"
+    - "surname"
+    properties:
+      surname:
+        type: "string"
+      custID:
+        type: "string"
+      name:
+        type: "string"
+

@@ -1,0 +1,69 @@
+---
+swagger: "2.0"
+info:
+  version: "1.0"
+  title: "cars"
+host: "localhost:5555"
+basePath: "/restv2"
+schemes:
+- "http"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+paths:
+  /cars:
+    get:
+      operationId: "cars_GET"
+      parameters: []
+      responses:
+        200:
+          description: "Successful"
+        401:
+          description: "Access Denied"
+    post:
+      operationId: "cars_POST"
+      parameters: []
+      responses:
+        200:
+          description: "Successful"
+        401:
+          description: "Access Denied"
+  /cars/{id}:
+    get:
+      operationId: "carsid_GET_2"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Successful"
+        401:
+          description: "Access Denied"
+    post:
+      operationId: "carsid_POST_2"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Successful"
+        401:
+          description: "Access Denied"
+    put:
+      operationId: "carsid_PUT_2"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Successful"
+        401:
+          description: "Access Denied"
+

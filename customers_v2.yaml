@@ -1,0 +1,44 @@
+---
+swagger: "2.0"
+info:
+  version: "1.0"
+  title: "customers_v2"
+host: "localhost:5555"
+basePath: "/restv2"
+schemes:
+- "http"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+paths:
+  /customers_v2:
+    post:
+      operationId: "customers_v2_POST"
+      parameters:
+      - in: "body"
+        name: "customers"
+        required: true
+        schema:
+          type: "array"
+          items:
+            $ref: "#/definitions/Customer"
+      responses:
+        200:
+          description: "Successful"
+        401:
+          description: "Access Denied"
+definitions:
+  Customer:
+    required:
+    - "custID"
+    - "name"
+    - "surname"
+    properties:
+      surname:
+        type: "string"
+      custID:
+        type: "string"
+      name:
+        type: "string"
+
